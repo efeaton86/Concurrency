@@ -21,6 +21,7 @@
 		F704340127D7F22F0021FF46 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F704340027D7F22F0021FF46 /* MockData.swift */; };
 		F704340327D7F4330021FF46 /* PostsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F704340227D7F4330021FF46 /* PostsListViewModel.swift */; };
 		F704340727D7F5590021FF46 /* PostsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F704340627D7F5590021FF46 /* PostsListView.swift */; };
+		F704340927D8C4A00021FF46 /* UserAndPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F704340827D8C4A00021FF46 /* UserAndPosts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		F704340027D7F22F0021FF46 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		F704340227D7F4330021FF46 /* PostsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewModel.swift; sourceTree = "<group>"; };
 		F704340627D7F5590021FF46 /* PostsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListView.swift; sourceTree = "<group>"; };
+		F704340827D8C4A00021FF46 /* UserAndPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAndPosts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				F70433EE27D7BADF0021FF46 /* User.swift */,
 				F70433F027D7BB380021FF46 /* Post.swift */,
+				F704340827D8C4A00021FF46 /* UserAndPosts.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F704340927D8C4A00021FF46 /* UserAndPosts.swift in Sources */,
 				F70433E227D7BA760021FF46 /* UsersListView.swift in Sources */,
 				F70433FF27D7F21E0021FF46 /* Bundle+Extension.swift in Sources */,
 				F704340327D7F4330021FF46 /* PostsListViewModel.swift in Sources */,
