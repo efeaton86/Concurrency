@@ -13,30 +13,47 @@ class UsersListViewModel: ObservableObject {
     @Published var showAlert = false
     @Published var errorMessage: String?
     
-    func fetchUsers() {
+    @MainActor
+    func fetchUsers() async {
         let apiService = APIService(urlString: "https://jsonplaceholder.typicode.com/users")
         isLoading.toggle()
+        defer {
+            isLoading.toggle()
+        }
+        do {
+                users = try await apiService.getJSON()
+            
+        } catch {
+            showAlert = true
+            errorMessage = error.localizedDescription + "\nPlease contact the developer and provide this error and the steps to reproduce."
+        }
+        
+        
+        
+        
+        
 //        this simiulates slow connection
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {}
-        apiService.getJSON { (result: Result<[User], APIError>) in
-            // defer will run after json is loaded and decoded
-            defer {
-                DispatchQueue.main.async {
-                    self.isLoading.toggle()
-                }
-            }
-            switch result {
-            case .success(let users):
-                DispatchQueue.main.async {
-                    self.users = users
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self.showAlert = true
-                    self.errorMessage = error.localizedDescription + "\nPlease contact the developer and provide this error and the steps to reproduce."
-                }
-            }
-        }
+//        apiService.getJSON { (result: Result<[User], APIError>) in
+//            // defer will run after json is loaded and decoded
+//            defer {
+//                DispatchQueue.main.async {
+//                    self.isLoading.toggle()
+//                }
+//            }
+//            switch result {
+//            case .success(let users):
+//                DispatchQueue.main.async {
+//                    self.users = users
+//                }
+//            case .failure(let error):
+//                DispatchQueue.main.async {
+//                    self.showAlert = true
+//                    self.errorMessage = error.localizedDescription + "\nPlease contact the developer and provide this error and the steps to reproduce."
+//                }
+//            }
+//        }
+        
         
 
     }
